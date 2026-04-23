@@ -31,7 +31,7 @@ Every AI coding agent has the same blind spot. Session ends, memory vanishes. Yo
 The result is measurable. On 240 real observations across 30 sessions, agentmemory hits 64% Recall@10 and perfect MRR while using 92% fewer tokens than dumping everything into context. When an agent searches "database performance optimization," it finds the N+1 fix you made three weeks ago — something keyword grep literally cannot do. Memories version automatically, supersede each other, propagate staleness to related graph nodes, and sync across agent instances via P2P mesh. Your agents stop repeating mistakes. Your context stays clean. Your sessions start fast.
 
 ```bash
-npx @agentmemory/agentmemory   # installs iii-engine if missing, starts everything
+pnpm dlx @agentmemory/agentmemory   # installs iii-engine if missing, starts everything
 ```
 
 ---
@@ -178,7 +178,7 @@ All 12 hooks, 4 skills, and MCP server are registered automatically.
 ### 2. Start agentmemory
 
 ```bash
-npx @agentmemory/agentmemory
+pnpm dlx @agentmemory/agentmemory
 ```
 
 This auto-installs iii-engine if missing, starts it, and runs the worker. One command.
@@ -187,7 +187,7 @@ Or from source:
 
 ```bash
 git clone https://github.com/rohitg00/agentmemory.git && cd agentmemory
-npm install && npm run build && npm start
+pnpm install && pnpm run build && pnpm start
 ```
 
 ### 4. Verify
@@ -300,7 +300,7 @@ All three streams are fused with Reciprocal Rank Fusion (RRF, k=60) and session-
 agentmemory auto-detects which provider to use. For best results, install local embeddings (no API key needed):
 
 ```bash
-npm install @xenova/transformers
+pnpm install @xenova/transformers
 ```
 
 | Provider | Model | Dimensions | Env Var | Notes |
@@ -491,7 +491,7 @@ Collects every 30 seconds: heap usage, CPU percentage (delta sampling), event lo
 Run agentmemory as a standalone MCP server for any MCP-compatible agent (Cursor, Codex, Gemini CLI, Windsurf):
 
 ```bash
-npx agentmemory-mcp
+pnpm dlx agentmemory-mcp
 ```
 
 Or add to your agent's MCP config:
@@ -833,10 +833,10 @@ agentmemory is built on iii-engine's three primitives:
 ## Development
 
 ```bash
-npm run dev               # Hot reload
-npm run build             # Production build (~425KB)
-npm test                  # Unit tests (581 tests, ~1.5s)
-npm run test:integration  # API tests (requires running services)
+pnpm run dev               # Hot reload
+pnpm run build             # Production build (~425KB)
+pnpm test                  # Unit tests (581 tests, ~1.5s)
+pnpm run test:integration  # API tests (requires running services)
 ```
 
 ### Prerequisites
